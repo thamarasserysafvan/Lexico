@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Handwriting Practice Results{% endblock %}
+
+{% block styles %}
+    {{ super() }}
+    <!-- Add any additional styles here -->
+{% endblock %}
+
+{% block active %} 
+    
+    <li class="nav-item">
+        <a class="nav-link" href="/handwriting/">HANDWRITING</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/games/">GAMES</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/speech/">SPEECH<span class="sr-only">(current)</span></a>
+    </li>
+{% endblock %}
+
+{% block header %}
+    <h1>Handwriting Practice Results</h1>
+{% endblock %}
+
+{% block content %}
+    <div style="margin: auto; width: 50%;">
+        {% if res and res[0][1] == 1 %}
+            <span style="color: #4CAF50">Correct!</span>
+        {% else %}
+            <span style="color: #8d221a">Incorrect!</span>
+        {% endif %}
+        <br><br><a href="/handwriting/"><button class="button">Try Again</button></a>
+    </div>
+{% endblock %}
